@@ -1,4 +1,5 @@
 @import "tailwindcss";
 @theme {
   --container-container: 1600px; 
+  --font-dm:"DM Sans", sans-serif;
 }
