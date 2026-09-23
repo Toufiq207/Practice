@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavbarList = ({text,className}) => {
   return (
-                    <li className={`text-sm text-[#767676] font-normal font-dm list-none ${className}`}>{text}</li>
+                    <li className={`text-sm text-primary hover:text-secondary font-normal hover:font-bold font-dm list-none duration-500 cursor-pointer ${className}`}>{text}</li>
   )
 }
 
