@@ -1,17 +1,18 @@
 import React from 'react'
 import Image from './Image'
-import ProductOne from '../assets/productOne.png'
+
 import Flex from './Flex'
 import { FaCodeCompare, FaHeart } from 'react-icons/fa6'
 import { FaShoppingCart } from 'react-icons/fa'
-const Cart = () => {
+const Cart = ({img, title,price}) => {
   return (
-    <div className='w-[370px] relative group'>
-        <div className='w-full'>
-            <Image className='w-full' src={ProductOne}/>
+    <div className='w-[370px] relative group '>
+       <div className=' relative overflow-hidden'>
+         <div className='w-full'>
+            <Image className='w-full' src={img}/>
         </div>
-        <div className='w-full  bg-white absolute -bottom-[110px] left-0
-        group-hover:bottom-[90px] duration-500 opacity-0 group-hover:opacity-100'>
+        <div className='w-full  bg-white absolute -bottom-0 left-0
+        group-hover:bottom-[92px] opacity-0 group-hover:opacity-100 duration-500 '>
 
 
 
@@ -22,11 +23,12 @@ const Cart = () => {
             </ul>
         </div>
        <Flex className='justify-between items-center pt-6 pb-4'>
-         <h4 className='text-xl text-secondary font-dm font-bold'>Basic Crew Neck Tee</h4>
-        <p className='text-base text-primary font-dm font-normal'>$44.00</p>
+         <h4 className='text-xl text-secondary font-dm font-bold'>{title}</h4>
+        <p className='text-base text-primary font-dm font-normal'>${price}</p>
        </Flex>
        <p className='text-base text-primary font-dm font-normal'>Black</p>
        <button className='py-2 px-8 bg-black text-sm text-white font-dm font-bold absolute top-5 left-5'>New</button>
+       </div>
     </div>
   )
 }
