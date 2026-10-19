@@ -7,10 +7,27 @@ import ProductTwo from "../assets/productTwo.png"
 import Button from '../component/Button'
 import AboutCart from '../component/AboutCart'
 import Heading from '../component/Heading'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment } from '../features/counter/counterSlice'
 const About = () => {
+  const dispatch=useDispatch()
+  const data=useSelector((state)=>state.counter.value
+  )
+  const handleIncrement=()=>{
+    dispatch(increment(1))
+  }
+    const handleDecrement=()=>{
+      // console.log("hi");
+    dispatch(decrement(1))
+      
+    }
   return (
     <section className='py-[140px]'>
+
       <Container>
+        <button onClick={handleIncrement}>increment</button>
+         <button onClick={handleDecrement}>Decrement</button>
+        <h1>{data}</h1>
         <Heading text='About'/>
         <Flex className='justify-between py-[128px]'>
           <div className='w-w49 relative'>
