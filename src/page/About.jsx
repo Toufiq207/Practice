@@ -7,28 +7,22 @@ import ProductTwo from "../assets/productTwo.png"
 import Button from '../component/Button'
 import AboutCart from '../component/AboutCart'
 import Heading from '../component/Heading'
-import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from '../features/counter/counterSlice'
+import {  useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 const About = () => {
-  const dispatch=useDispatch()
-  const data=useSelector((state)=>state.counter.value
-  )
-  const handleIncrement=()=>{
-    dispatch(increment(1))
-  }
-    const handleDecrement=()=>{
-      // console.log("hi");
-    dispatch(decrement(1))
-      
-    }
+ 
+      const data = useSelector((state) => state.bread.prvevalue
+)
+    //  const data2 = useSelector((state) => state.bread.daybefore)
+    
   return (
     <section className='py-[140px]'>
 
       <Container>
-        <button onClick={handleIncrement}>increment</button>
-         <button onClick={handleDecrement}>Decrement</button>
-        <h1>{data}</h1>
+       
         <Heading text='About'/>
+<p><Link to={data=="home" ? "/":`/${data}`}>{data} </Link> >  About</p>
+
         <Flex className='justify-between py-[128px]'>
           <div className='w-w49 relative'>
             <Image className='w-full' src={ProductOne}/>

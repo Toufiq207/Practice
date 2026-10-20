@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import  counterSlice  from '../features/counter/counterSlice'
+import  breadcumSlice  from '../features/breadcum/breadcumSlice'
 
 export const store = configureStore({
   reducer: {
-    counter:counterSlice
+    counter:counterSlice,
+    bread:breadcumSlice
   }
 })
 

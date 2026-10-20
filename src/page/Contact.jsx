@@ -2,11 +2,16 @@ import React from 'react'
 import Container from '../component/Container'
 import Button from '../component/Button'
 import Heading from '../component/Heading'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 const Contact = () => {
+        const data = useSelector((state) => state.bread.prvevalue)
+    // const data2 = useSelector((state) => state.bread.daybefore)
   return (
     <section className='py-[140px]'>
       <Container>
         <Heading text="Contacts"/>
+        <p> <Link to={data=="home" ? "/":`/${data}`}>{data} </Link> >  Contact</p>
         <h2 className='text-[39px] text-secondary font-bold font-dm pb-10'>Fill up a Form</h2>
 
          <label className='text-base text-secondary font-dm font-bold' htmlFor="name">Name <br />
